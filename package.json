@@ -6,7 +6,7 @@
     "repository":
     {
         "type": "git",
-        "url": "https://github.com/coligo-io/notes-app-vuejs-vuex.git"
+        "url": "https://github.com/zky86/vue_vuex_demo.git"
     },
     "scripts":
     {
@@ -18,8 +18,8 @@
         "vuex",
         "notes"
     ],
-        "author": "Fady Makram",
-        "license": "MIT",
+        "author": "zky86",
+        "license": "",
         "devDependencies":
     {
         "babel-core": "^6.7.6",
