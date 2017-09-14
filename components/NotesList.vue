@@ -25,14 +25,14 @@
     <!-- render notes in a list -->
     <div class="container">
       <div class="list-group">
-        <p v-for="note in filteredNotes"
-          class="list-group-item" 
+        <a v-for="note in filteredNotes"
+          class="list-group-item" href="javascript:;"
           :class="{active: activeNote === note}"
           @click="updateActiveNote(note)">
           <h4 class="list-group-item-heading">
             {{note.text.trim().substring(0, 30)}}
           </h4>
-        </p>
+        </a>
       </div>
     </div>
 
