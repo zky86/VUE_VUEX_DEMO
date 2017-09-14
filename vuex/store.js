@@ -2,9 +2,19 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import note from './modules/note'
-import actions from './actions'
+// import actions from './actions'
 Vue.use(Vuex)
 
+
+const ADD_NOTE = 'ADD_NOTE';
+// 编辑笔记
+const EDIT_NOTE = 'EDIT_NOTE';
+// 删除笔记
+const DELETE_NOTE = 'DELETE_NOTE';
+// 设置当前的笔记
+const SET_ACTIVE_NOTE = 'SET_ACTIVE_NOTE';
+// 切换是否收藏
+const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 
 
 // 将state, mutations传入
@@ -12,5 +22,24 @@ export default new Vuex.Store({
   modules: {
     note
   },
-  actions
+  // actions
+  // 
+  actions: {
+        addNote({commit}) {
+          commit(ADD_NOTE)
+        },
+        editNote({commit}, text) {
+          commit(EDIT_NOTE, text)
+        },
+        deleteNote({commit}) {
+          commit(DELETE_NOTE)
+        },
+        updateActiveNote({commit}, note) {
+          commit(SET_ACTIVE_NOTE, note)
+        },
+        toggleFavorite({commit}) {
+          commit(TOGGLE_FAVORITE)
+        }
+  }
+
 })

@@ -1,4 +1,15 @@
-import * as types from '../mutation-types';
+// import * as types from '../mutation-types';
+
+const ADD_NOTE = 'ADD_NOTE';
+// 编辑笔记
+const EDIT_NOTE = 'EDIT_NOTE';
+// 删除笔记
+const DELETE_NOTE = 'DELETE_NOTE';
+// 设置当前的笔记
+const SET_ACTIVE_NOTE = 'SET_ACTIVE_NOTE';
+// 切换是否收藏
+const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
+
 
 const state = {
   notes: [],// 所有的笔记，这里自然是用数组来存储
@@ -8,7 +19,7 @@ const state = {
 // 根据不同的事件类型(types)做出的修改动作，对状态的修改都在这里面
 const mutations = {
   // 新增笔记
-  [types.ADD_NOTE](state) {
+  [ADD_NOTE](state) {
     const newNote = {
       text: 'New note',
       favorite: false 
@@ -19,20 +30,20 @@ const mutations = {
     state.activeNote = newNote;
   },
   // 编辑笔记
-  [types.EDIT_NOTE](state, text) {
+  [EDIT_NOTE](state, text) {
     state.activeNote.text = text;
   },
-  [types.DELETE_NOTE](state) {
+  [DELETE_NOTE](state) {
     state.notes.splice(state.activeNote, 1);// 删除当前的笔记
     // 删除后默认笔记列表的第一条为当前的笔记
     if(state.notes.length > 0) {
       state.activeNote = state.notes[0];
     }
   },
-  [types.TOGGLE_FAVORITE](state) {
+  [TOGGLE_FAVORITE](state) {
     state.activeNote.favorite = !state.activeNote.favorite
   },
-  [types.SET_ACTIVE_NOTE](state, note) {
+  [SET_ACTIVE_NOTE](state, note) {
     state.activeNote = note;
   }
 }
