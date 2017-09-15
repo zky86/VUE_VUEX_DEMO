@@ -1,7 +1,7 @@
 <template>
   <div id="note">
     <toolbar></toolbar>
-    <notes-list></notes-list>
+    <notes_list></notes_list>
     <editor></editor>
   </div>
 </template>
@@ -15,9 +15,9 @@ import Editor from './Editor.vue'
 export default {
   // 注册组件
   components: {
-    Toolbar,
-    NotesList,
-    Editor
+    toolbar : Toolbar,
+    notes_list :NotesList,
+    editor : Editor
   }
 }
 </script>
