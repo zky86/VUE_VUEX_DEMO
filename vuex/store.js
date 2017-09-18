@@ -45,6 +45,10 @@ export default new Vuex.Store({
             state.notes.push(newNote);
             // 指定当前的笔记为新增的笔记
             state.activeNote = newNote;
+
+
+            // console.log(state.notes);
+            // console.log(state.activeNote);
           },
           // 编辑笔记
           [EDIT_NOTE](state, text) {
@@ -58,7 +62,18 @@ export default new Vuex.Store({
             }
           },
           [TOGGLE_FAVORITE](state) {
-            state.activeNote.favorite = !state.activeNote.favorite
+            if (state.activeNote.favorite) 
+            {
+                state.activeNote.favorite = false;
+            }
+            else
+            {
+                state.activeNote.favorite = true;
+            }
+
+            // state.activeNote.favorite = state.activeNote.favorite ? state.activeNote.favorite : false ;
+            // state.activeNote.favorite = !state.activeNote.favorite
+
           },
           [SET_ACTIVE_NOTE](state, note) {
             state.activeNote = note;

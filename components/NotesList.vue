@@ -58,6 +58,10 @@ export default {
       if(this.show === 'all') {
         return this.notes
       } else if(this.show === 'favorites') {
+        console.log(this.notes);
+        console.log(note);
+        // console.log(this.notes.filter(note => note.favorite));
+
         return this.notes.filter(note => note.favorite)
       }
     }
