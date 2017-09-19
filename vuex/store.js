@@ -17,10 +17,10 @@ const SET_ACTIVE_NOTE = 'SET_ACTIVE_NOTE';
 const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 
 
-const state = {
-  notes: [],// 所有的笔记，这里自然是用数组来存储
-  activeNote: {}// 当前的笔记
-}
+// const state = {
+//   notes: [],// 所有的笔记，这里自然是用数组来存储
+//   activeNote: {}// 当前的笔记
+// }
 
 
 
@@ -33,7 +33,7 @@ export default new Vuex.Store({
         state : {
           notes: [],// 所有的笔记，这里自然是用数组来存储
           activeNote: {},// 当前的笔记
-          test_computed : 1 //测试属性变化，引起computed
+          test_computed : 0 //测试属性变化，引起computed
         },
         mutations : {
           // 新增笔记
@@ -92,7 +92,13 @@ export default new Vuex.Store({
             return state.activeNote
           }*/
           notes: state => { return state.notes },
-          activeNote: state => { return state.activeNote }
+
+          activeNote: state => { return state.activeNote },
+
+          test_computed: function(state) {
+            console.log(11112222);
+            return state.test_computed
+          }
 
         }
     }

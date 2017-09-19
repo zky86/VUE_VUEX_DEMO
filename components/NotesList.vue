@@ -61,8 +61,13 @@ export default {
         return this.$store.state.note.test_computed;
     },
 
-    activeNote() {return this.$store.state.note.activeNote},
-    
+
+    activeNote() {
+
+      console.log(this.$store.state.note.activeNote);
+      return this.$store.state.note.activeNote
+    },
+
     filteredNotes() {
       if(this.show === 'all') {
         return this.notes
