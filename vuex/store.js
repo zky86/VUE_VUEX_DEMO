@@ -96,7 +96,7 @@ export default new Vuex.Store({
           activeNote: state => { return state.activeNote },
 
           test_computed: function(state) {
-            console.log(11112222);
+            console.log('初始化数据');
             return state.test_computed
           }
 

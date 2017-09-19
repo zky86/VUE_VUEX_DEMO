@@ -2,7 +2,7 @@
   <div id="notes-list">
     
     <div id="list-header">
-      <h2>Notes | coligo {{test_computed}}</h2>
+      <h2 @click="test_getters">Notes | coligo {{test_computed}}</h2>
       <div class="btn-group btn-group-justified" role="group">
         <!-- All Notes button -->
         <div class="btn-group" role="group">
@@ -48,7 +48,13 @@ export default {
     }
   },
   methods: {
-    updateActiveNote(note) {this.$store.dispatch('updateActiveNote', note)}
+    updateActiveNote(note) {this.$store.dispatch('updateActiveNote', note)},
+
+    test_getters(){
+      var num = this.$store.getters.test_computed;
+      console.log(num);
+    }
+
   },
   computed: {
     // 既可以在局部状态中直接获取状态，也可以通过模块定义的getters中获取状态
