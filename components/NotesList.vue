@@ -1,8 +1,8 @@
 <template>
   <div id="notes-list">
-
+    
     <div id="list-header">
-      <h2>Notes | coligo</h2>
+      <h2>Notes | coligo {{test_computed}}</h2>
       <div class="btn-group btn-group-justified" role="group">
         <!-- All Notes button -->
         <div class="btn-group" role="group">
@@ -52,17 +52,35 @@ export default {
   },
   computed: {
     // 既可以在局部状态中直接获取状态，也可以通过模块定义的getters中获取状态
-    notes() {return this.$store.state.note.notes},
+    notes() {
+      return this.$store.state.note.notes
+    },
+
+    test_computed(){
+        console.log('测试computed');
+        return this.$store.state.note.test_computed;
+    },
+
     activeNote() {return this.$store.state.note.activeNote},
+    
     filteredNotes() {
       if(this.show === 'all') {
         return this.notes
       } else if(this.show === 'favorites') {
         console.log(this.notes);
         console.log(note);
-        // console.log(this.notes.filter(note => note.favorite));
 
-        return this.notes.filter(note => note.favorite)
+        console.log(this.notes.filter(note => note.favorite));
+        // return this.notes.filter(note => note.favorite)
+
+        var arr = this.notes.filter(function(note){
+          return note.favorite == true ;
+        });
+
+
+        return arr;
+
+
       }
     }
   },

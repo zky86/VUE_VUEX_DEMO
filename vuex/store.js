@@ -32,7 +32,8 @@ export default new Vuex.Store({
 
         state : {
           notes: [],// 所有的笔记，这里自然是用数组来存储
-          activeNote: {}// 当前的笔记
+          activeNote: {},// 当前的笔记
+          test_computed : 1 //测试属性变化，引起computed
         },
         mutations : {
           // 新增笔记
@@ -45,6 +46,8 @@ export default new Vuex.Store({
             state.notes.push(newNote);
             // 指定当前的笔记为新增的笔记
             state.activeNote = newNote;
+            state.test_computed++;
+            console.log('添加');
 
 
             // console.log(state.notes);
