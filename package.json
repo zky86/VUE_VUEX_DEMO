@@ -3,13 +3,11 @@
     "version": "1.0.0",
     "description": "A notes application built using VueJs and Vuex",
     "main": "index.js",
-    "repository":
-    {
+    "repository": {
         "type": "git",
         "url": "https://github.com/zky86/vue_vuex_demo.git"
     },
-    "scripts":
-    {
+    "scripts": {
         "dev": "webpack-dev-server --open --hot",
         "build": "webpack -p"
     },
@@ -18,10 +16,9 @@
         "vuex",
         "notes"
     ],
-        "author": "zky86",
-        "license": "",
-        "devDependencies":
-    {
+    "author": "zky86",
+    "license": "",
+    "devDependencies": {
         "babel-core": "^6.7.6",
         "babel-loader": "^6.2.4",
         "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -38,8 +35,8 @@
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.4.2"
     },
-    "dependencies":
-    {
+    "dependencies": {
+        "testmodelpub": "^1.1.0",
         "vue": "^2.2.4",
         "vuex": "^2.2.1"
     }
